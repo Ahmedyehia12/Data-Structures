@@ -43,6 +43,7 @@ public:
     void swap(int index1, int index2);
     bool isEmpty();
     void clear();
+    node<T>* getNode(int index);
 
 
 

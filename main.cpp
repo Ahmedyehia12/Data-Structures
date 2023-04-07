@@ -9,20 +9,7 @@ int main(){
     list.insertAtTail(3);
     list.insertAtTail(4);
     list.printList();
-    list.insertAt(2,5);
+    list.swap(1,3);
     list.printList();
-    list.deleteAt(2);
-    list.printList();
-    list.insertAt(4,2);
-    list.printList();
-    cout<<list.getSize()<<endl;
-    list.deleteAt(4);
-    list.printList();
-    cout<<list.getSize()<<endl;
-    list.replaceAt(2,10);
-    list.printList();
-    list.clear();
-    list.printList();
-
 
 }

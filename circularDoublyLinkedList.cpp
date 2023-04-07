@@ -201,14 +201,63 @@ bool circularDoublyLinkedList<T>::isItemAtEqual(int index, T element) {
 }
 
 template<class T>
-void circularDoublyLinkedList<T>::swap(int index1, int index2) {
-    if(index1>this->size-1 || index2> this->size){
-        cout<<"Invalid index"<<endl;
-        return;
+node<T> *circularDoublyLinkedList<T>::getNode(int index) {
+    if (index < 0 || index >= this->size) {
+        cout << "Invalid index" << endl;
+        return nullptr;
     }
 
+    node<T>* temp = head;
+    bool start = true;
+    for (int i = 0; i < index && (temp != head || start); i++) {
+        temp = temp->next;
+        start = false;
+    }
 
+    return temp;
 }
+template<class T>
+void circularDoublyLinkedList<T>::swap(int index1, int index2) {
+    if (index1 < 0 || index1 >= this->size || index2 < 0 || index2 >= this->size) {
+        cout << "Invalid index" << endl;
+        return;
+    }
+    else{
+        node<T> * temp1 = getNode(index1);
+        node<T> * temp2 = getNode(index2);
+        if (temp1 == head)
+            head = temp2;
+        else if (temp2 == head)
+            head = temp1;
+        if (temp1 == tail)
+            tail = temp2;
+        else if (temp2 == tail)
+            tail = temp1;
+
+        node<T>* temp;
+        temp = temp1->next;
+        temp1->next = temp2->next;
+        temp2->next = temp;
+
+        if (temp1->next != nullptr)
+            temp1->next->prev = temp1;
+        if (temp2->next != nullptr)
+            temp2->next->prev = temp2;
+
+        temp = temp1->prev;
+        temp1->prev = temp2->prev;
+        temp2->prev = temp;
+
+        if (temp1->prev != nullptr)
+            temp1->prev->next = temp1;
+        if (temp2->prev != nullptr)
+            temp2->prev->next = temp2;
+
+    }
+}
+
+
+
 
 template<class T>
 bool circularDoublyLinkedList<T>::isEmpty() {
