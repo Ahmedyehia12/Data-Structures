@@ -11,5 +11,8 @@ int main(){
     list.printList();
     list.swap(1,3);
     list.printList();
+    list.swap(0,2);
+    list.printList();
+    cout<< list.retrieveAt(0)<<endl;
 
 }

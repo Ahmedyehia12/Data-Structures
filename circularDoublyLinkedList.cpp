@@ -225,14 +225,18 @@ void circularDoublyLinkedList<T>::swap(int index1, int index2) {
     else{
         node<T> * temp1 = getNode(index1);
         node<T> * temp2 = getNode(index2);
-        if (temp1 == head)
+        if (temp1 == head){
             head = temp2;
-        else if (temp2 == head)
+        }
+        else if (temp2 == head){
             head = temp1;
-        if (temp1 == tail)
+        }
+        if (temp1 == tail){
             tail = temp2;
-        else if (temp2 == tail)
+        }
+        else if (temp2 == tail){
             tail = temp1;
+        }
 
         node<T>* temp;
         temp = temp1->next;
