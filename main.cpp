@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "circularDoublyLinkedList.cpp"
 using namespace std;
@@ -15,5 +16,4 @@ int main(){
     list.printList();
     list.replaceAt(0,5);
     list.printList();
-
 }
