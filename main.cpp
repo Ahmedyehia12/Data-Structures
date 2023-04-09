@@ -1,17 +1,19 @@
-#include "queue.cpp"
+
+#include <iostream>
+#include "circularDoublyLinkedList.cpp"
+using namespace std;
 
 int main(){
-    Queue<int>q;
-    q.enqueue(1);
-    q.enqueue(2);
-    q.enqueue(3);
-    q.enqueue(4);
-    q.print();
-    q.clear();
-    q.enqueue(5);
-    q.enqueue(6);
-    q.print();
-    cout << q.dequeue() << endl;
-    cout << q.dequeue() << endl;
-    cout << q.dequeue() << endl;
+    circularDoublyLinkedList<int> list;
+    list.insertAtTail(1);
+    list.insertAtTail(2);
+    list.insertAtTail(3);
+    list.insertAtTail(4);
+    list.swap(0,3);
+    list.printList();
+    cout<<list.retrieveAt(0)<<endl;
+    list.swap(0,3);
+    list.printList();
+    list.replaceAt(0,5);
+    list.printList();
 }
