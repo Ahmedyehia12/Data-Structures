@@ -2,7 +2,7 @@
 
 template<class T>
 void Queue<T>::enqueue(T data) {
-    node * new_node = new node;
+    Node<T> * new_node = new Node<T>;
     new_node->data = data;
     if (head == nullptr) {
         head = new_node;
@@ -20,7 +20,7 @@ template<class T>
 T Queue<T>::dequeue() {
     if(isEmpty())
         throw runtime_error("Queue is empty");
-    node* temp = head;
+    Node<T>* temp = head;
     head = head->next;
     T data = temp->data;
     delete temp;
@@ -44,9 +44,9 @@ int Queue<T>::getSize() {
 
 template<class T>
 void Queue<T>::clear() {
-       node* temp = head;
+       Node<T>* temp = head;
        while (temp != nullptr) {
-            node* temp2 = temp;
+            Node<T>* temp2 = temp;
             temp = temp->next;
             delete temp2;
         }
@@ -58,7 +58,7 @@ void Queue<T>::clear() {
 
 template<class T>
 void Queue<T>::print() {
-    node* temp = head;
+    Node<T>* temp = head;
     while (temp != nullptr) {
         cout<<temp->data<<" ";
         temp = temp->next;

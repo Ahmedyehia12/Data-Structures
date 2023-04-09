@@ -5,12 +5,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node {
-    int data;
-    node *next;
-    node*prev;
-    node(){
-        data = 0;
+template <class T>
+struct Node {
+    T data;
+    Node *next;
+    Node *prev;
+    Node(){
         next = nullptr;
         prev = nullptr;
     }
@@ -18,8 +18,8 @@ struct node {
 template <class T>
 class Queue {
 private:
-    node *head;
-    node *tail;
+    Node<T> *head;
+    Node<T> *tail;
     int size;
 public:
     Queue(){
