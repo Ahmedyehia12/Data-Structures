@@ -243,19 +243,15 @@ void circularDoublyLinkedList<T>::swap(int index1, int index2) {
         temp1->next = temp2->next;
         temp2->next = temp;
 
-        if (temp1->next != nullptr)
-            temp1->next->prev = temp1;
-        if (temp2->next != nullptr)
-            temp2->next->prev = temp2;
+        temp1->next->prev = temp1;
+        temp2->next->prev = temp2;
 
         temp = temp1->prev;
         temp1->prev = temp2->prev;
         temp2->prev = temp;
 
-        if (temp1->prev != nullptr)
-            temp1->prev->next = temp1;
-        if (temp2->prev != nullptr)
-            temp2->prev->next = temp2;
+        temp1->prev->next = temp1;
+        temp2->prev->next = temp2;
 
     }
 }

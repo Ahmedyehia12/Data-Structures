@@ -8,11 +8,12 @@ int main(){
     list.insertAtTail(2);
     list.insertAtTail(3);
     list.insertAtTail(4);
+    list.swap(0,3);
     list.printList();
-    list.swap(1,3);
+    cout<<list.retrieveAt(0)<<endl;
+    list.swap(0,3);
     list.printList();
-    list.swap(0,2);
+    list.replaceAt(0,5);
     list.printList();
-    cout<< list.retrieveAt(0)<<endl;
 
 }
