@@ -29,7 +29,7 @@ void LinkedList<T>::insertAtTail(T element) {
     {
         temp=temp->next;
     }
-    SLLNode<T>* newnode=new SLLNode(element);
+    SLLNode<T>* newnode=new SLLNode<T>(element);
     newnode->data=element;
     temp->next=newnode;
     newnode->next = NULL;
@@ -39,6 +39,7 @@ template <class T>
 void LinkedList<T>::insertAt(T element, int index) {
     if (index<0||index>size) {
         cout<<"out of range!!!";
+        return;
     }
     if (index==0) {
         insertAtHead(element);
@@ -61,6 +62,7 @@ template <class T>
 void LinkedList<T>::removeAtHead() {
     if (head==NULL) {
         cout<<"Empty list!!!"<<endl;
+        return;
     }
     SLLNode<T> *ptr=head;
     if (head==tail) {
@@ -77,6 +79,7 @@ template <class T>
 void LinkedList<T>:: removeAtTail() {
     if (head==NULL) {
         cout<<"Empty list!!!"<<endl;
+        return;
     }
     SLLNode<T> *ptr=head;
     while (ptr->next->next != NULL) {
@@ -114,6 +117,7 @@ template <class T>
 T LinkedList<T>:: retrieveAt(int index) {
     if (index<0||index>=size) {
         cout<<"out of range!!!";
+        return ;
     }
     SLLNode<T> *curr = head;
     for (int i = 0; i < index; i++) {
@@ -125,6 +129,7 @@ template <class T>
 void LinkedList<T>:: replaceAt(T newElement, int index) {
     if (index<0||index>=size) {
         cout<<"out of range!!!";
+        return ;
     }
     SLLNode<T> *curr=head;
     for (int i=0;i<index;i++) {
@@ -147,6 +152,7 @@ template <class T>
 bool LinkedList<T>::isItemAtEqual(T element, int index) {
     if (index<0||index>=size) {
         cout<<"Index out of range";
+        return false ;
     }
 
     SLLNode<T> *curr=head;
