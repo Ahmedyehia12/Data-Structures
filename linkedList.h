@@ -5,21 +5,19 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
 template <class T>
-class Node {
+class SLLNode {
 public:
     T data;
-    Node* next;
-
-    Node(T element) ;
+    SLLNode* next;
+    SLLNode(T element) ;
 };
 
 template <class T>
 class LinkedList {
 public:
-    Node<T> *head;
-    Node<T> *tail;
+    SLLNode<T> *head;
+    SLLNode<T> *tail;
     int size;
     LinkedList();
     void insertAtHead(T element) ;
@@ -39,6 +37,5 @@ public:
     void print();
 
 };
-
 
 #endif //DS_ASSIGN2_LINKEDLIST_H

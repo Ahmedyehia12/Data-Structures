@@ -1,6 +1,6 @@
 #include "linkedList.h"
 template <class T>
-Node<T>::Node (T element) {
+SLLNode<T>::SLLNode (T element) {
     data = element;
     next = NULL;
 }
@@ -12,7 +12,7 @@ LinkedList<T>::LinkedList() {
 
 template <class T>
 void LinkedList<T>:: insertAtHead(T element) {
-    Node<T>* newNode=new Node<T>(element);
+    SLLNode<T>* newNode=new SLLNode<T>(element);
     newNode->next=head;
     head=newNode;
     size++;
@@ -24,12 +24,12 @@ void LinkedList<T>::insertAtTail(T element) {
         return;
     }
 
-    Node<T>* temp=head;
+    SLLNode<T>* temp=head;
     while (temp->next!=NULL)
     {
         temp=temp->next;
     }
-    Node<T>* newnode=new Node(element);
+    SLLNode<T>* newnode=new SLLNode(element);
     newnode->data=element;
     temp->next=newnode;
     newnode->next = NULL;
@@ -48,8 +48,8 @@ void LinkedList<T>::insertAt(T element, int index) {
         insertAtTail(element);
         return;
     }
-    Node<T> *newNode=new Node<T>(element);
-    Node<T> *curr=head;
+    SLLNode<T> *newNode=new SLLNode<T>(element);
+    SLLNode<T> *curr=head;
     for (int i=0; i<index-1; i++) {
         curr=curr->next;
     }
@@ -62,7 +62,7 @@ void LinkedList<T>::removeAtHead() {
     if (head==NULL) {
         cout<<"Empty list!!!"<<endl;
     }
-    Node<T> *ptr=head;
+    SLLNode<T> *ptr=head;
     if (head==tail) {
         head=NULL;
         tail=NULL;
@@ -78,11 +78,11 @@ void LinkedList<T>:: removeAtTail() {
     if (head==NULL) {
         cout<<"Empty list!!!"<<endl;
     }
-    Node<T> *ptr=head;
+    SLLNode<T> *ptr=head;
     while (ptr->next->next != NULL) {
         ptr=ptr->next;
     }
-    Node<T> *target=ptr->next;
+    SLLNode<T> *target=ptr->next;
     ptr->next=NULL;
     delete target;
     size--;
@@ -101,11 +101,11 @@ void LinkedList<T>:: removeAt(int index) {
         removeAtTail();
         return;
     }
-    Node<T> *curr=head;
+    SLLNode<T> *curr=head;
     for (int i=0;i<index-1;i++) {
         curr= curr->next;
     }
-    Node<T> *target=curr->next;
+    SLLNode<T> *target=curr->next;
     curr->next=curr->next->next;
     delete target;
     size--;
@@ -115,7 +115,7 @@ T LinkedList<T>:: retrieveAt(int index) {
     if (index<0||index>=size) {
         cout<<"out of range!!!";
     }
-    Node<T> *curr = head;
+    SLLNode<T> *curr = head;
     for (int i = 0; i < index; i++) {
         curr=curr->next;
     }
@@ -126,7 +126,7 @@ void LinkedList<T>:: replaceAt(T newElement, int index) {
     if (index<0||index>=size) {
         cout<<"out of range!!!";
     }
-    Node<T> *curr=head;
+    SLLNode<T> *curr=head;
     for (int i=0;i<index;i++) {
         curr=curr->next;
     }
@@ -135,7 +135,7 @@ void LinkedList<T>:: replaceAt(T newElement, int index) {
 template <class T>
 bool LinkedList<T>:: isExist(T element) {
     bool isExist=false;
-    Node<T>* curr=head;
+    SLLNode<T>* curr=head;
     while (curr!=NULL) {
         if (curr->data==element)
             isExist = true;
@@ -149,7 +149,7 @@ bool LinkedList<T>::isItemAtEqual(T element, int index) {
         cout<<"Index out of range";
     }
 
-    Node<T> *curr=head;
+    SLLNode<T> *curr=head;
     for (int i=0;i<index;i++) {
         curr= curr->next;
     }
@@ -164,16 +164,16 @@ void LinkedList<T>:: swap( int firstItemIdx, int secondItemIdx) {
     if (firstItemIdx==secondItemIdx) {
         return;
     }
-    Node<T>* node1=head;
-    Node<T>* prev1=NULL;
+    SLLNode<T>* node1=head;
+    SLLNode<T>* prev1=NULL;
     int i=0;
     while (node1&&i<firstItemIdx) {
         prev1=node1;
         node1=node1->next;
         i++;
     }
-    Node<T>* node2=head;
-    Node<T>* prev2=NULL;
+    SLLNode<T>* node2=head;
+    SLLNode<T>* prev2=NULL;
     i=0;
     while (node2&&i<secondItemIdx) {
         prev2=node2;
@@ -191,7 +191,7 @@ void LinkedList<T>:: swap( int firstItemIdx, int secondItemIdx) {
     } else {
         head=node1;
     }
-    Node<T>* temp=node1->next;
+    SLLNode<T>* temp=node1->next;
     node1->next=node2->next;
     node2->next=temp;
 }
@@ -216,11 +216,10 @@ void LinkedList<T>:: clear() {
 }
 template <class T>
 void LinkedList<T>:: print() {
-    Node<T> *temp=head;
+    SLLNode<T> *temp=head;
     while (temp!=NULL) {
         cout<<temp->data << " ";
         temp=temp->next;
     }
     cout << endl;
 }
-
