@@ -1,10 +1,10 @@
 //
 // Created by 20100 on 4/17/2023.
 //
-
 #ifndef DOUBLELINKED_DOUBLE_LINKED_LIST_H
 #define DOUBLELINKED_DOUBLE_LINKED_LIST_H
 #include <bits/stdc++.h>
+using namespace std;
 template <typename T>
 class Dl_Node {
 public:
