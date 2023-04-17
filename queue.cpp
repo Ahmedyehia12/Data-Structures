@@ -2,7 +2,7 @@
 
 template<class T>
 void Queue<T>::enqueue(T data) {
-    Node<T> * new_node = new Node<T>;
+    Node<T> * new_node = new Node<T>(0);
     new_node->data = data;
     if (head == nullptr) {
         head = new_node;
