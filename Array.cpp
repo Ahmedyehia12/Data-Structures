@@ -30,9 +30,10 @@ void Array<T>::insertAt(int element, int index) {
 template <typename T>
 T Array<T>:: retrieveAt(int index) {
     if (index < 0 || index >= length) {
-        cout<< "out of range!!!";
-        return 0;
-    } else
+        cout<< "out of range!!!"<<endl;
+        return -1;
+    }
+    else
         return arr[index];
 }
 template <typename T>

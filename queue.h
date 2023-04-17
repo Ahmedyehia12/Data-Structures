@@ -10,7 +10,7 @@ struct Node {
     T data;
     Node *next;
     Node *prev;
-    Node(){
+    Node(int i) {
         next = nullptr;
         prev = nullptr;
     }
