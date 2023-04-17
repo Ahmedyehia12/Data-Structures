@@ -19,6 +19,7 @@ template <typename T>
 void Array<T>::insertAt(int element, int index) {
     if (length >= max_size || index < 0 || index >= length) {
         cout << "Error!!!" << endl;
+        return;
     }
     for (int i = length; i > index; i--) {
         arr[i] = arr[i - 1];
@@ -30,6 +31,7 @@ template <typename T>
 T Array<T>:: retrieveAt(int index) {
     if (index < 0 || index >= length) {
         cout<< "out of range!!!";
+        return 0;
     } else
         return arr[index];
 }
@@ -44,6 +46,7 @@ template <typename T>
 void Array<T>:: replaceAt (T newElement, int index){
     if (index < 0 || index >= length) {
         cout<< "out of range!!!";
+        return;
     }
     arr[index]=newElement;
 }
@@ -51,6 +54,7 @@ template <typename T>
 bool Array<T>::isItemAtEqual (T element, int index) {
     if (index < 0 || index >= length) {
         cout<< "out of range!!!";
+        return false;
     }
     if (arr[index]==element){
         return true;

@@ -114,10 +114,10 @@ void LinkedList<T>:: removeAt(int index) {
     size--;
 }
 template <class T>
-T LinkedList<T>:: retrieveAt(int index) {
+T LinkedList<T>::retrieveAt(int index) {
     if (index<0||index>=size) {
         cout<<"out of range!!!";
-        return ;
+        return 0 ;
     }
     SLLNode<T> *curr = head;
     for (int i = 0; i < index; i++) {

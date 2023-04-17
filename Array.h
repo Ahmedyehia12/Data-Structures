@@ -1,6 +1,6 @@
 
-#ifndef UNTITLED4_ARRAY_H
-#define UNTITLED4_ARRAY_H
+#ifndef DS_ASSIGN2_Array_H
+#define DS_ASSIGN2_Array_H
 
 
 #include <bits/stdc++.h>
