@@ -243,7 +243,7 @@ void DoubleLinked<T>::reverse() {
 }
 
 template <typename T>
-int DoubleLinked<T>::doubleLinkedListSize (){
+int DoubleLinked<T>::doubleLinkedListSize () const {
     return Size;
 }
 
