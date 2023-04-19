@@ -167,28 +167,62 @@ T DoubleLinked<T>::retrieveAt(int index) {
     return curr->data;
 }
 
-template<typename T>
+template<class T>
 void DoubleLinked<T>::swap(int firstIndex, int secondIndex) {
-    if (isEmpty()) {
-        cout << "Empty List!!\n";
-    } else if (firstIndex == secondIndex) {
-        cout << "No Need To Swap\n";
-    } else if (firstIndex < 0 || firstIndex >= Size || secondIndex < 0 || secondIndex >= Size) {
-        cout << "Out of Range indices \n";
-    } else {
-        Dl_Node<T> *node1 = head;
-        Dl_Node<T> *node2 = head;
-        for(int i=0;i<firstIndex;i++){
-            node1 = node1->nextPtr;
-        }
-        for(int j=0;j<secondIndex;j++){
-            node2 = node2->nextPtr;
-        }
-        T temp = node1->data;
-        node1->data = node2->data;
-        node2->data = temp;
+    if (firstIndex < 0 || firstIndex >= Size || secondIndex < 0 || secondIndex >= Size) {
+        cout << "Out of Range!!" << endl;
+       
+    } else if (firstIndex - secondIndex == 0) {
+        cout << "There is No need to swap\n" << endl;
+    }else{
+    Dl_Node<T>* node1 = head;
+    Dl_Node<T>* node2 = head;
+
+    for(int i = 0; i < firstIndex; i++){
+        node1 = node1->nextPtr;
     }
+    for(int j = 0; j < secondIndex; j++){
+        node2 = node2->nextPtr;
+    }
+        
+        
+    if (node1 == head) {
+        head = node2;
+    } else if (node2 == head) {
+        head = node1;
+    }
+    if (node1 == tail) {
+        tail = node2;
+    } else if (node2 == tail) {
+        tail = node1;
+    }
+
+
+    if (node1->prevPtr) {
+        node1->prevPtr->nextPtr = node2;
+    }
+    if (node2->prevPtr) {
+        node2->prevPtr->nextPtr = node1;
+    }
+    if (node1->nextPtr) {
+        node1->nextPtr->prevPtr = node2;
+    }
+    if (node2->nextPtr) {
+        node2->nextPtr->prevPtr = node1;
+    }
+
+
+    Dl_Node<T>* temp = node1->prevPtr;
+    node1->prevPtr = node2->prevPtr;
+    node2->prevPtr = temp;
+    temp = node1->nextPtr;
+    node1->nextPtr = node2->nextPtr;
+    node2->nextPtr = temp;
+
 }
+}
+
+
 
 template <typename T>
 bool DoubleLinked<T>::isEmpty() const {
