@@ -34,12 +34,10 @@ void  Stack<T>::print(){
         cout<<"\n";
     }
 }
-
 template<typename T>
 T Stack<T>::pop() {
     if(isEmpty()){
-        cout<<"Nothing to pop\n";
-        exit(1);
+        return T();
     }
     else {
         T old_value = head->data;
@@ -53,12 +51,13 @@ T Stack<T>::pop() {
 }
 
 template<typename T>
-T Stack<T>::Top(){
-    if(!isEmpty()) {
-        return (head->data);
+T Stack<T>::Top() {
+    if (!isEmpty()) {
+        return head->data;
     }
-    exit(1);
-
+    else {
+        return T();
+    }
 }
 template<typename T>
 bool Stack<T>::isEmpty(){
