@@ -117,7 +117,7 @@ template <class T>
 T LinkedList<T>::retrieveAt(int index) {
     if (index<0||index>=size) {
         cout<<"out of range!!!";
-        return 0 ;
+        return -1 ;
     }
     SLLNode<T> *curr = head;
     for (int i = 0; i < index; i++) {
