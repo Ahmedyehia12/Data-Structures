@@ -1,6 +1,4 @@
-//
-// Created by 20100 on 4/14/2023.
-//
+//Author: Hoda Samir
 
 #ifndef DS_ASSIGN2_STACK_H
 #define DS_ASSIGN2_STACK_H
