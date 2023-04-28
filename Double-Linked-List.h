@@ -1,6 +1,5 @@
-//
-// Created by 20100 on 4/17/2023.
-//
+//Author: Hoda Samir
+
 #ifndef DOUBLELINKED_DOUBLE_LINKED_LIST_H
 #define DOUBLELINKED_DOUBLE_LINKED_LIST_H
 #include <bits/stdc++.h>
