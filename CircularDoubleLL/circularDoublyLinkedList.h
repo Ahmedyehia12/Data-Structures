@@ -45,11 +45,6 @@ public:
     void clear();
     node<T>* getNode(int index);
 
-
-
-
-
-
     void printList(){
         node<T> *temp = head;
         bool start = true;

@@ -1,19 +1,21 @@
-#include "circularDoublyLinkedList.cpp"
 #include "queue.cpp"
 #include "stack.cpp"
-#include "Double-Linked-List.cpp"
+#include "DoubleLL/Double-Linked-List.cpp"
+#include "CircularDoubleLL/circularDoublyLinkedList.cpp"
+#include"SingleLL/linkedList.cpp"
 using namespace std;
 
 int main(){
-    DoubleLinked<int> list;
-    list.insertAtHead(1);
-    list.insertAtHead(2);
-    list.insertAtHead(3);
-    list.insertAtHead(4);
-    list.forwardTraversal();
-    list.backWordTraversal();
-    list.removeAtHead();
-    list.forwardTraversal();
-    list.swap(0,1);
-    list.forwardTraversal();
+    LinkedList<int> l;
+    l.insertAtTail(1);
+    l.insertAtTail(2);
+    l.insertAtTail(3);
+    l.insertAtTail(4);
+    l.swap(1,3);
+    l.print();
+    l.swap(1,3);
+    l.print();
+
+
+
     }
