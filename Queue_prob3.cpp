@@ -1,7 +1,7 @@
 #include <iostream>
 #include "queue.cpp"
 using namespace std;
-
+//Author : Ahmed Yehia
 void sortQueue(Queue<int> &q){
  if(q.isEmpty())
     return;
@@ -38,16 +38,6 @@ void sortQueue(Queue<int> &q){
         q.enqueue(temp_q.first());
         temp_q.dequeue();
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 int main(){
