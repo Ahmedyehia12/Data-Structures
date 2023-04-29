@@ -18,7 +18,6 @@ void sortQueue(Queue<int> &q){
 
             i++;
         }
-
         i = 0;
         while(i < curr_size) {
             if(q.first() != curr_min) {
@@ -27,7 +26,6 @@ void sortQueue(Queue<int> &q){
             else {
                 temp_q.enqueue(q.first());
             }
-
             q.dequeue();
 
             i++;

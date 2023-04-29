@@ -268,16 +268,18 @@ template<class T>
 void circularDoublyLinkedList<T>::clear() {
     node<T> * temp = head;
     bool start = true;
-    while(temp!=head || start){
+    while(temp != head|| start ){
         node<T> * temp2 = temp;
         temp = temp->next;
-        delete temp2;
+        temp2->prev = nullptr;
+        temp2->next = nullptr;
         start = false;
+        delete temp2;
     }
     head = nullptr;
     tail = nullptr;
     this->size = 0;
-    return;
+
 
 }
 

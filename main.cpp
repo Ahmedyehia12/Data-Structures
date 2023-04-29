@@ -7,18 +7,16 @@
 using namespace std;
 
 int main(){
-        Queue<int> q;
-        q.enqueue(1);
-        q.enqueue(2);
-        q.enqueue(3);
-        q.enqueue(4);
-        q.print();
-        q.dequeue();
-        q.print();
-
-
-
-
-
-
-    }
+      circularDoublyLinkedList<int> c;
+        c.insertAtHead(1);
+        c.insertAtHead(2);
+        c.insertAtHead(3);
+        c.insertAtHead(4);
+        c.printList();
+        c.clear();
+        c.insertAtHead(5);
+        c.insertAtHead(6);
+        c.printList();
+        c.clear();
+        c.printList();
+}

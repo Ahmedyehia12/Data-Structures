@@ -46,6 +46,10 @@ public:
     node<T>* getNode(int index);
 
     void printList(){
+        if(head == nullptr){
+            cout<<"List is empty"<<endl;
+            return;
+        }
         node<T> *temp = head;
         bool start = true;
         while(temp!=head || start){
