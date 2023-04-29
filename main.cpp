@@ -1,20 +1,23 @@
-#include "queue.cpp"
-#include "stack.cpp"
+#include "Queue/queue.cpp"
+#include "Stack/Stack.cpp"
 #include "DoubleLL/Double-Linked-List.cpp"
 #include "CircularDoubleLL/circularDoublyLinkedList.cpp"
 #include"SingleLL/linkedList.cpp"
+#include "Array/Array.cpp"
 using namespace std;
 
 int main(){
-    LinkedList<int> l;
-    l.insertAtTail(1);
-    l.insertAtTail(2);
-    l.insertAtTail(3);
-    l.insertAtTail(4);
-    l.swap(1,3);
-    l.print();
-    l.swap(1,3);
-    l.print();
+        Queue<int> q;
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        q.enqueue(4);
+        q.print();
+        q.dequeue();
+        q.print();
+
+
+
 
 
 
