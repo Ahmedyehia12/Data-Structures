@@ -1,4 +1,3 @@
-
 #include "circularDoublyLinkedList.cpp"
 #include "queue.cpp"
 #include "stack.cpp"
@@ -17,7 +16,4 @@ int main(){
     list.forwardTraversal();
     list.swap(0,1);
     list.forwardTraversal();
-
-
-
-}
+    }
